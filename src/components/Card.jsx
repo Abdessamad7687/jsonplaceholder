@@ -4,9 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 const Card = ({ userId, title, body }) => {
     return (
         <div className="card bg-light mb-3 w-25 m-2 mx-auto">
-            <div className="card-header">UserId: {userId}</div>
+            <p className="card-header">UserId: {userId}</p>
             <div className="card-body">
-                <h5 className="card-title"><strong>Title</strong>: {title}</h5>
+                <h6 className="card-title"><strong>Title</strong>: {title}</h6>
                 <p className="card-text">{body}</p>
             </div>
         </div>
