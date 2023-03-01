@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from './components/Card';
 import Footer from './components/Footer';
 
-function App() {
+export default function App() {
   let [list, setList] = useState([])
   const fetchApi = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts')
@@ -14,12 +14,12 @@ function App() {
   useEffect(() => {
     fetchApi()
   }, [])
-  
+
   let [filtredItems, setFiltredItems] = useState(list)
-  const handleChange = (event) => {
-	
+  const handleChange =  (event) => {
+
     if(event.target.value === ""){	setFiltredItems(list)}
-    filtredItems = list.filter((item) => item.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1)
+    filtredItems =  list.filter((item) => item.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1)
     setFiltredItems(filtredItems)
     }
 
@@ -56,4 +56,4 @@ function App() {
   );
 }
 
-export default App;
+
