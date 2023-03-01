@@ -4,7 +4,7 @@ import Card from './components/Card';
 import Footer from './components/Footer';
 
 function App() {
-  const [list, setList] = useState([])
+  let [list, setList] = useState([])
   const fetchApi = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts')
     const data = await response.json()
@@ -14,14 +14,31 @@ function App() {
   useEffect(() => {
     fetchApi()
   }, [])
+  
+  let [filtredItems, setFiltredItems] = useState(list)
+  const handleChange = (event) => {
+	
+    if(event.target.value === ""){	setFiltredItems(list)}
+    filtredItems = list.filter((item) => item.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1)
+    setFiltredItems(filtredItems)
+    }
+
   return (
     <>
       <div className="container mt-5">
         <h6 className="text-center my-3">This data is availaible in <strong>https://jsonplaceholder.typicode.com/posts</strong></h6>
         <h5 className="text-center my-3">Total items: {list.length}</h5>
+        <div className="col-md-6 mx-auto">
+          <input
+            type="text"
+            placeholder="Search for items"
+            className="form-control my-2"
+            onChange={handleChange}
+          />
+        </div>
         <div className="row mx-auto">
           {
-            list.map((item, index) => {
+            filtredItems.map((item, index) => {
               return (
                 <Card
                   key={index}
