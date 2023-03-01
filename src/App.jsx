@@ -31,7 +31,7 @@ export default function App() {
         <div className="col-md-6 mx-auto">
           <input
             type="text"
-            placeholder="Search for items"
+            placeholder="Search for items by title"
             className="form-control my-2"
             onChange={handleChange}
           />
