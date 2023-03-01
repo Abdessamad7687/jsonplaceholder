@@ -1,24 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Card from './components/Card';
+import Footer from './components/Footer';
 
 function App() {
+  const [list, setList] = useState([])
+  const fetchApi = async () => {
+    const response = await fetch('https://jsonplaceholder.typicode.com/posts')
+    const data = await response.json()
+    console.log(data)
+    setList(data)
+  }
+  useEffect(() => {
+    fetchApi()
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className="container mt-5">
+        <h6 className="text-center my-3">This data is availaible in <strong>https://jsonplaceholder.typicode.com/posts</strong></h6>
+        <div className="row mx-auto">
+          {
+            list.map((item, index) => {
+              return (
+                <Card
+                  key={index}
+                  userId={item.userId}
+                  title={item.title}
+                  body={item.body}
+                />
+              )
+            })
+          }
+        </div>
+      </div>
+      <Footer />
+    </>
   );
 }
 
