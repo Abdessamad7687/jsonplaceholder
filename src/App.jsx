@@ -18,6 +18,7 @@ function App() {
     <>
       <div className="container mt-5">
         <h6 className="text-center my-3">This data is availaible in <strong>https://jsonplaceholder.typicode.com/posts</strong></h6>
+        <h5 className="text-center my-3">Total items: {list.length}</h5>
         <div className="row mx-auto">
           {
             list.map((item, index) => {
