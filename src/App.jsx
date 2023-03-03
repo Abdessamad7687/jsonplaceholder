@@ -1,7 +1,7 @@
-import { useState, useEffect } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from './components/Card';
-import Footer from './components/Footer';
+import { useState, useEffect } from 'react'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Card from './components/Card'
+import Footer from './components/Footer'
 
 export default function App() {
   let [list, setList] = useState([])
@@ -15,22 +15,22 @@ export default function App() {
   }, [])
 
   let [filtredItems, setFiltredItems] = useState(list)
-  const handleChange =  (event) => {
+  const handleChange = (event) => {
 
-    if(event.target.value === ""){	setFiltredItems(list)}
-    filtredItems =  list.filter((item) => item.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1)
+    if (event.target.value === "") { setFiltredItems(list) }
+    filtredItems = list.filter((item) => item.title.toLowerCase().indexOf(event.target.value.toLowerCase()) !== -1)
     setFiltredItems(filtredItems)
-    }
+  }
 
   return (
     <>
       <div className="container mt-5">
-        <h6 className="text-center my-3">This data is availaible in 
-        <strong>
-          <a href=" https://jsonplaceholder.typicode.com/posts" target="_blank">
-          https://jsonplaceholder.typicode.com/posts
-          </a>
-        </strong>
+        <h6 className="text-center my-3">Data availaible in
+          <strong>
+            <a href=" https://jsonplaceholder.typicode.com/posts" target="_blank">
+              https://jsonplaceholder.typicode.com/posts
+            </a>
+          </strong>
         </h6>
         <h5 className="text-center my-3">Total items: {list.length}</h5>
         <div className="col-md-6 mx-auto">
