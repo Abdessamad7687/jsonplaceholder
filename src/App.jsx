@@ -8,7 +8,6 @@ export default function App() {
   const fetchApi = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts')
     const data = await response.json()
-    console.log(data)
     setList(data)
   }
   useEffect(() => {
@@ -26,7 +25,13 @@ export default function App() {
   return (
     <>
       <div className="container mt-5">
-        <h6 className="text-center my-3">This data is availaible in <strong>https://jsonplaceholder.typicode.com/posts</strong></h6>
+        <h6 className="text-center my-3">This data is availaible in 
+        <strong>
+          <a href=" https://jsonplaceholder.typicode.com/posts" target="_blank">
+          https://jsonplaceholder.typicode.com/posts
+          </a>
+        </strong>
+        </h6>
         <h5 className="text-center my-3">Total items: {list.length}</h5>
         <div className="col-md-6 mx-auto">
           <input
