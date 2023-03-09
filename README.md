@@ -7,11 +7,11 @@
 <img src="https://github.com/Abdessamad7687/react-json-placeholder-api/blob/main/src/assets/images/search-demo.jpg" alt="Json website">
 
 ```bash
-git clone https://github.com/Abdessamad7687/react-json-placeholder-api
+git clone https://github.com/Abdessamad7687/jsonplaceholder
 ```
 
 ```bash
-cd react-json-placeholder-api
+cd jsonplaceholder
 ```
 
 
