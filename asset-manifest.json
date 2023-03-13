@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/jsonplaceholder/static/css/main.cdf3ee41.css",
+    "main.js": "/jsonplaceholder/static/js/main.228b9e9f.js",
+    "index.html": "/jsonplaceholder/index.html",
+    "main.cdf3ee41.css.map": "/jsonplaceholder/static/css/main.cdf3ee41.css.map",
+    "main.228b9e9f.js.map": "/jsonplaceholder/static/js/main.228b9e9f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cdf3ee41.css",
+    "static/js/main.228b9e9f.js"
+  ]
+}
